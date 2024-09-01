@@ -40,9 +40,11 @@ function Generator(props) {
   }, [Length, Number, Char, passwordGenerator]);
 
   return (
-    <>
       <div className={`${Dark ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'} min-h-screen flex flex-col items-center justify-center`}>
-        <h1 className="font-bold text-center font-sans text-4xl mb-10">
+
+       <div className='relative -top-9'>
+        
+        <h1 className="font-bold text-center font-sans text-4xl mb-10 relative -bottom-14">
           Password Generator
         </h1>
 
@@ -62,7 +64,7 @@ function Generator(props) {
             placeholder='Password'
             readOnly
             ref={passRef}
-          />
+            />
           <button className='ml-4 bg-orange-500 text-white px-4 py-2 rounded shadow-md hover:bg-orange-600 transition' onClick={textCopying}>
             Copy
           </button>
@@ -78,7 +80,7 @@ function Generator(props) {
               value={Length}
               className='cursor-pointer w-2/3'
               onChange={(e) => setLength(parseInt(e.target.value))}
-            />
+              />
           </div>
 
           <div className='flex justify-between'>
@@ -88,7 +90,7 @@ function Generator(props) {
                 checked={Number}
                 onChange={() => setNumber((prev) => !prev)}
                 className='cursor-pointer'
-              />
+                />
               <label className='text-orange-500 font-bold text-xl ml-2'>Numbers</label>
             </div>
 
@@ -98,13 +100,13 @@ function Generator(props) {
                 checked={Char}
                 onChange={() => setChar((prev) => !prev)}
                 className='cursor-pointer'
-              />
+                />
               <label className='text-orange-500 font-bold text-xl ml-2'>Characters</label>
             </div>
           </div>
         </div>
       </div>
-    </>
+</div>
   );
 }
 
